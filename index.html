@@ -399,28 +399,36 @@
   }
   #matrix-center {
     text-align: center; font-family: 'JetBrains Mono', monospace;
-    padding: 0 1.5rem; width: 100%; max-width: 600px;
+    padding: 0 1rem; width: 100%; max-width: 95vw;
+    display: flex; flex-direction: column; align-items: center;
   }
   #matrix-tag {
-    font-size: clamp(0.55rem, 2.5vw, 0.75rem); color: #00ff88;
-    letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem;
+    font-size: clamp(0.5rem, 2.5vw, 0.75rem); color: #00ff88;
+    letter-spacing: clamp(0.1em, 1.5vw, 0.25em); text-transform: uppercase; margin-bottom: 1rem;
     opacity: 0; animation: mFadeIn 0.5s ease 0.3s forwards;
+    max-width: 90vw; margin-left: auto; margin-right: auto;
   }
   #matrix-name {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 11vw, 7rem);
-    font-weight: 800; color: #fff; letter-spacing: -0.02em;
+    font-size: clamp(1.6rem, 9vw, 7rem);
+    font-weight: 800; color: #fff; letter-spacing: -0.01em;
     line-height: 1; margin-bottom: 0.8rem;
     opacity: 0; animation: mFadeIn 0.6s ease 0.7s forwards;
     text-shadow: 0 0 40px rgba(0,255,136,0.3);
-    word-break: keep-all; white-space: nowrap;
+    white-space: nowrap;
+    max-width: 95vw;
+    overflow: hidden;
   }
   #matrix-name span { color: #00ff88; }
   #matrix-role {
-    font-size: clamp(0.58rem, 2.2vw, 0.8rem); color: #64748b;
-    letter-spacing: 0.08em; margin-bottom: 2rem; padding: 0 0.5rem;
+    font-size: clamp(0.52rem, 3vw, 0.8rem); color: #64748b;
+    letter-spacing: 0.05em; margin-bottom: 2rem;
+    padding: 0 1rem;
     opacity: 0; animation: mFadeIn 0.6s ease 1s forwards;
-    line-height: 1.6;
+    line-height: 1.8;
+    word-break: break-word;
+    max-width: 90vw;
+    margin-left: auto; margin-right: auto;
   }
   #matrix-bar {
     width: min(280px, 75vw); height: 2px; background: #1e1e2e;
@@ -434,8 +442,8 @@
     box-shadow: 0 0 10px #00ff88;
   }
   #matrix-status {
-    font-size: clamp(0.6rem, 2vw, 0.72rem); color: #00ff88;
-    letter-spacing: 0.1em;
+    font-size: clamp(0.58rem, 2vw, 0.72rem); color: #00ff88;
+    letter-spacing: 0.08em;
     opacity: 0; animation: mFadeIn 0.4s ease 1.3s forwards;
   }
   @keyframes mFadeIn {

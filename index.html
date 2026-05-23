@@ -386,16 +386,18 @@
 
   /* ─── MATRIX INTRO ───────────────────────────────────── */
   #matrix-intro {
-    position: fixed; inset: 0; z-index: 99999; background: #000;
+    position: fixed; inset: 0; z-index: 99999;
+    background: #000000;
     display: flex; align-items: center; justify-content: center;
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.8s ease;
+    overflow: hidden;
   }
-  #matrix-intro.hide { opacity: 0; pointer-events: none; transform: scale(1.04); }
+  #matrix-intro.hide { opacity: 0; pointer-events: none; }
   #matrix-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
   #matrix-overlay {
-    position: relative; z-index: 2; width: 100%; height: 100%;
+    position: absolute; inset: 0; z-index: 2;
     display: flex; align-items: center; justify-content: center;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.88) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
   }
   #matrix-center {
     text-align: center; font-family: 'JetBrains Mono', monospace;
@@ -410,14 +412,14 @@
   }
   #matrix-name {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(1.6rem, 9vw, 7rem);
-    font-weight: 800; color: #fff; letter-spacing: -0.01em;
-    line-height: 1; margin-bottom: 0.8rem;
+    font-size: clamp(2.5rem, 14vw, 7rem);
+    font-weight: 800; color: #fff; letter-spacing: 0.02em;
+    line-height: 1.05; margin-bottom: 0.8rem;
     opacity: 0; animation: mFadeIn 0.6s ease 0.7s forwards;
     text-shadow: 0 0 40px rgba(0,255,136,0.3);
-    white-space: nowrap;
-    max-width: 95vw;
-    overflow: hidden;
+    white-space: pre-line;
+    text-align: center;
+    width: 100%;
   }
   #matrix-name span { color: #00ff88; }
   #matrix-role {
@@ -460,7 +462,7 @@
   <div id="matrix-overlay">
     <div id="matrix-center">
       <div id="matrix-tag">// initializing</div>
-      <div id="matrix-name">KARAN<span>BUILDS</span></div>
+      <div id="matrix-name">KARAN<br/><span>BUILDS</span></div>
       <div id="matrix-role">I write code. I lead teams. I ship things that matter.</div>
       <div id="matrix-bar"><div id="matrix-bar-fill"></div></div>
       <div id="matrix-status">Booting portfolio<span id="matrix-dots"></span></div>
@@ -756,6 +758,7 @@
 
 <script>
   // MATRIX INTRO
+  document.body.style.overflow = 'hidden';
   const canvas = document.getElementById('matrix-canvas');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
@@ -795,6 +798,7 @@
     document.getElementById('matrix-intro').classList.add('hide');
     setTimeout(() => document.getElementById('matrix-intro').remove(), 900);
   }, 4500);
+  setTimeout(() => { document.body.style.overflow = ''; }, 5400);
   window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;

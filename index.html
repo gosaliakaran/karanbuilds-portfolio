@@ -68,7 +68,7 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo { font-family: var(--mono); font-size: 1rem; color: var(--accent); letter-spacing: 0.05em; }
+  .nav-logo { font-family: var(--mono); font-size: clamp(0.75rem, 3.5vw, 1rem); color: var(--accent); letter-spacing: 0.05em; white-space: nowrap; }
   .nav-logo span { color: var(--muted); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
@@ -104,9 +104,10 @@
   }
   h1 .name-accent { color: var(--accent); }
   .hero-role {
-    font-family: var(--mono); font-size: clamp(0.85rem, 2vw, 1.1rem);
+    font-family: var(--mono); font-size: clamp(0.72rem, 2.5vw, 1.1rem);
     color: var(--muted); margin-bottom: 2rem;
     opacity: 0; animation: fadeUp 0.6s ease 0.6s forwards;
+    line-height: 2; flex-wrap: wrap;
   }
   .hero-role .highlight { color: var(--accent2); }
   .hero-desc {
@@ -269,11 +270,45 @@
   ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
   @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
+    nav { padding: 0.9rem 1.2rem; }
     .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    #about .about-grid { grid-template-columns: 1fr; }
-    .hero-stats { gap: 1.5rem; }
+    section { padding: 3.5rem 1.2rem; }
+    #about .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-stats { gap: 1.2rem; flex-wrap: wrap; }
+    .hero-stats > div { flex: 1 1 40%; }
+    .stat-num { font-size: 1.5rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    h2 { margin-bottom: 2rem; }
+    #hero { padding-top: 6rem; }
+    .hero-desc { font-size: 0.95rem; }
+    .timeline { padding-left: 1rem; }
+    .timeline-item { padding-left: 1.2rem; }
+    .timeline-item::before { left: -1rem; }
+    .contact-email { font-size: 0.95rem; word-break: break-all; }
+    .about-code { font-size: 0.72rem; }
+  }
+
+  /* MATRIX INTRO MOBILE */
+  @media (max-width: 480px) {
+    #matrix-name {
+      font-size: clamp(2rem, 12vw, 3.5rem) !important;
+      letter-spacing: -0.01em !important;
+      word-break: break-all;
+      padding: 0 1rem;
+    }
+    #matrix-role {
+      font-size: 0.65rem !important;
+      padding: 0 1.5rem;
+      letter-spacing: 0.06em !important;
+    }
+    #matrix-tag {
+      font-size: 0.62rem !important;
+      letter-spacing: 0.15em !important;
+    }
+    #matrix-bar { width: 200px !important; }
+    #matrix-center { padding: 0 1rem; width: 100%; }
+    #matrix-status { font-size: 0.62rem !important; }
   }
 
   /* MATRIX INTRO */
@@ -297,7 +332,7 @@
     opacity: 0; animation: mFadeIn 0.5s ease 0.3s forwards;
   }
   #matrix-name {
-    font-family: 'Syne', sans-serif; font-size: clamp(3rem, 10vw, 7rem);
+    font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 10vw, 7rem);
     font-weight: 800; color: #fff; letter-spacing: -0.02em;
     line-height: 1; margin-bottom: 1rem;
     opacity: 0; animation: mFadeIn 0.6s ease 0.7s forwards;

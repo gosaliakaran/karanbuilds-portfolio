@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Karan Gosalia | Team Lead & Full Stack Developer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230a0a0f'/><text x='32' y='44' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='38' fill='%2300ff88'>%3E_</text></svg>"/>
+<meta name="theme-color" content="#0a0a0f"/>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -281,7 +283,7 @@
     font-family: var(--mono); font-size: clamp(0.88rem, 4vw, 1.4rem);
     color: var(--accent); letter-spacing: 0.02em; margin-bottom: 2.5rem;
     display: block; text-decoration: none; word-break: break-all;
-    transition: text-shadow 0.2s; cursor: pointer;
+    transition: text-shadow 0.2s; cursor: pointer !important;
   }
   .contact-email:hover { text-shadow: 0 0 20px rgba(0,255,136,0.4); }
   .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
@@ -290,7 +292,7 @@
     color: var(--muted); text-decoration: none;
     padding: 0.75rem 1.4rem; border: 1px solid var(--border);
     border-radius: 4px; transition: all 0.2s;
-    display: flex; align-items: center; gap: 0.5rem; cursor: pointer;
+    display: flex; align-items: center; gap: 0.5rem; cursor: pointer !important;
   }
   .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
@@ -448,6 +450,7 @@
     letter-spacing: 0.08em;
     opacity: 0; animation: mFadeIn 0.4s ease 1.3s forwards;
   }
+  a, a:hover, a:focus, a:active { cursor: pointer !important; }
   @keyframes mFadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: none; }
@@ -741,12 +744,12 @@
   <p class="section-label reveal">05 // contact</p>
   <h2 class="reveal">Let's Build Something Great</h2>
   <p class="contact-sub reveal">Got a project? A problem to solve? Or just want to talk tech?<br/>I'm one message away — let's make it happen.</p>
-  <span class="contact-email reveal" onclick="window.location.href='mailto:karangosalia15@gmail.com'" style="cursor:pointer;">karangosalia15@gmail.com</span>
+  <a href="mailto:karangosalia15@gmail.com" class="contact-email reveal" rel="noopener">karangosalia15@gmail.com</a>
   <div class="contact-links reveal">
     <a href="https://www.linkedin.com/in/karan-gosalia-b37ba6153" class="contact-link" target="_blank">
       <span>in</span> Connect on LinkedIn
     </a>
-    <a href="#" class="contact-link" onclick="window.location.href='mailto:karangosalia15@gmail.com'; return false;">
+    <a href="mailto:karangosalia15@gmail.com" class="contact-link" rel="noopener">
       <span>✉</span> Send an Email
     </a>
   </div>

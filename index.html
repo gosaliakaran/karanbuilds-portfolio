@@ -281,7 +281,7 @@
     font-family: var(--mono); font-size: clamp(0.88rem, 4vw, 1.4rem);
     color: var(--accent); letter-spacing: 0.02em; margin-bottom: 2.5rem;
     display: block; text-decoration: none; word-break: break-all;
-    transition: text-shadow 0.2s;
+    transition: text-shadow 0.2s; cursor: pointer;
   }
   .contact-email:hover { text-shadow: 0 0 20px rgba(0,255,136,0.4); }
   .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
@@ -741,12 +741,12 @@
   <p class="section-label reveal">05 // contact</p>
   <h2 class="reveal">Let's Build Something Great</h2>
   <p class="contact-sub reveal">Got a project? A problem to solve? Or just want to talk tech?<br/>I'm one message away — let's make it happen.</p>
-  <a href="mailto:karangosalia15@gmail.com" class="contact-email reveal">karangosalia15@gmail.com</a>
+  <span class="contact-email reveal" onclick="window.location.href='mailto:karangosalia15@gmail.com'" style="cursor:pointer;">karangosalia15@gmail.com</span>
   <div class="contact-links reveal">
     <a href="https://www.linkedin.com/in/karan-gosalia-b37ba6153" class="contact-link" target="_blank">
       <span>in</span> Connect on LinkedIn
     </a>
-    <a href="mailto:karangosalia15@gmail.com" class="contact-link">
+    <a href="#" class="contact-link" onclick="window.location.href='mailto:karangosalia15@gmail.com'; return false;">
       <span>✉</span> Send an Email
     </a>
   </div>
